@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author Student
  */
 @Stateless
-public class TehnikaTipFacade extends AbstractFacade<TehnikaTip> {
+public class TehnikaTipFacade extends AbstractFacade<TehnikaTip> implements TehnikaTipFacadeLocal {
 
     @PersistenceContext(unitName = "Potanin25-EE-ejbPU")
     private EntityManager em;

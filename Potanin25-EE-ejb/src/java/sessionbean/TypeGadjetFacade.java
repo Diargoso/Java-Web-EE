@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author Student
  */
 @Stateless
-public class TypeGadjetFacade extends AbstractFacade<TypeGadjet> {
+public class TypeGadjetFacade extends AbstractFacade<TypeGadjet> implements TypeGadjetFacadeLocal {
 
     @PersistenceContext(unitName = "Potanin25-EE-ejbPU")
     private EntityManager em;

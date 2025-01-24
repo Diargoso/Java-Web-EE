@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author Student
  */
 @Stateless
-public class LicoFacade extends AbstractFacade<Lico> {
+public class LicoFacade extends AbstractFacade<Lico> implements LicoFacadeLocal {
 
     @PersistenceContext(unitName = "Potanin25-EE-ejbPU")
     private EntityManager em;

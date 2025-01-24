@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author Student
  */
 @Stateless
-public class YchetFacade extends AbstractFacade<Ychet> {
+public class YchetFacade extends AbstractFacade<Ychet> implements YchetFacadeLocal {
 
     @PersistenceContext(unitName = "Potanin25-EE-ejbPU")
     private EntityManager em;

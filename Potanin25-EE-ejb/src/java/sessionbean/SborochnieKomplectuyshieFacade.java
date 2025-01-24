@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author Student
  */
 @Stateless
-public class SborochnieKomplectuyshieFacade extends AbstractFacade<SborochnieKomplectuyshie> {
+public class SborochnieKomplectuyshieFacade extends AbstractFacade<SborochnieKomplectuyshie> implements SborochnieKomplectuyshieFacadeLocal {
 
     @PersistenceContext(unitName = "Potanin25-EE-ejbPU")
     private EntityManager em;
