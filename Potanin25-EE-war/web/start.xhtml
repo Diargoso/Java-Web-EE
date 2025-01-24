@@ -14,24 +14,24 @@
                 <h1>CRUD</h1>
                 <h:form>
                     <h:panelGrid columns="12" cellpadding="5">
-                        <h:outputText value="Name " />
+                        <h:outputText value="Famaly " />
                         <p:inputText value="#{licoController.f}"/>
-                        <h:outputText value="Author " />
+                        <h:outputText value="Name " />
                         <p:inputText value="#{licoController.i}" />
-                        <h:outputText value="Category " />
+                        <h:outputText value="Otchestvo " />
                         <p:inputText value="#{licoController.o}"/>
                         <p:commandButton value="Add" icon="fa fa-fw fa-plus" action="#{licoController.createLico()}"/>
                     </h:panelGrid>
                 </h:form>
                 <h:form  id="form">
                     <p:dataTable value="#{licoController.getAllLicos()}" var="lico" style="margin: 2em;" rowKey="#{lico.id}">
-                        <p:column headerText="Name">
+                        <p:column headerText="Famaly">
                             <h:outputText value="#{lico.f}"/>
                         </p:column>
-                        <p:column headerText="Year">
+                        <p:column headerText="name">
                             <h:outputText value="#{lico.i}"/>
                         </p:column>
-                        <p:column headerText="Author">
+                        <p:column headerText="Otchestvo">
                             <h:outputText value="#{lico.o}"/>
                         </p:column>
                         <p:column style="width:100px;text-align: center">
@@ -44,11 +44,11 @@
                     <p:dialog header="Edit Lico" widgetVar="editDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
                         <p:outputPanel id="licoEdit" style="text-align:center;">
                             <p:panelGrid  columns="2" rendered="#{not empty licoController.selectedLico}" columnClasses="label,value">
-                                <h:outputText value="Name: " />
+                                <h:outputText value="Famaly: " />
                                 <p:inputText value="#{licoController.selectedLico.f}" />
-                                <h:outputText value="Category: " />
+                                <h:outputText value="name: " />
                                 <p:inputText value="#{licoController.selectedLico.i}" />
-                                <h:outputText value="Author: " />
+                                <h:outputText value="Otchestvo: " />
                                 <p:inputText value="#{licoController.selectedLico.o}"/>
                             </p:panelGrid>
                             <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{licoController.updateLico()}"/>
