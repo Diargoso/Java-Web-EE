@@ -103,7 +103,7 @@ public class licoController implements Serializable {
     }
 
     public String updateLico(Lico lico) {
-        this.licosFacade.edit(this.lico);
+        this.licosFacade.edit(lico);
         return "start.xhtml?faces-redirect=true";
     }
 

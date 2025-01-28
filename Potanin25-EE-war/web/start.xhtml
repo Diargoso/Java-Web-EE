@@ -51,7 +51,7 @@
                                 <h:outputText value="Author: " />
                                 <p:inputText value="#{licoController.selectedLico.o}"/>
                             </p:panelGrid>
-                            <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{licoController.updateLico()}"/>
+                            <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{licoController.updateLico(licoController.selectedLico)}"/>
                         </p:outputPanel>
                     </p:dialog>
                 </h:form>
