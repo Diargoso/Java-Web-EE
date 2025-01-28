@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="/css/default.css"/>
         <h:outputStylesheet name="/css/cssLayout.css"/>
+        <link href="resources/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <title>Facelets Template</title>
     </h:head>
 
@@ -18,10 +19,8 @@
                 <h2 align="center">Welcome to our Mice site</h2>
                 <ul align="right">
                     <h:form>
-                        <h:panelGroup/>
-                        <h:commandButton value="Sign in" action="Registr" />
-                        <h:panelGroup/>
-                        <h:commandButton value="Sign up" action="Registr" />
+                        <h:commandLink value="Sign in " action="Registr" />
+                        <h:commandLink value="Sign up " action="Registr" />
                     </h:form>
                 </ul>
             </ui:insert>
@@ -51,9 +50,11 @@
                     <h3>Часто задаваемые вопросы:</h3>
                     <ul>
                         <li>
-                            <h:outputLink value="http://www.ensode.com">
-                                <h:outputText value="Как авторизоватся?"/>
-                            </h:outputLink>
+                            <h:form>
+                                <h:commandLink action="Question">
+                                    <h:outputText value="Как авторизоватся?"/>
+                                </h:commandLink>
+                            </h:form>
                         </li>
                     </ul>
                 </ui:insert>
