@@ -11,76 +11,12 @@
         <ui:composition template="./Template.xhtml">
 
             <ui:define name="content">
-                <h1>CRUD</h1>
-                <h:form>
-                    <h:panelGrid columns="12" cellpadding="5">
-                        <h:outputText value="Name " />
-                        <p:inputText value="#{licoController.f}"/>
-                        <h:outputText value="Author " />
-                        <p:inputText value="#{licoController.i}" />
-                        <h:outputText value="Category " />
-                        <p:inputText value="#{licoController.o}"/>
-                        <p:commandButton value="Add" icon="fa fa-fw fa-plus" action="#{licoController.createLico()}"/>
-                    </h:panelGrid>
-                </h:form>
-                <h:form  id="form">
-                    <p:dataTable value="#{licoController.getAllLicos()}" var="lico" style="margin: 2em;" rowKey="#{lico.id}">
-                        <p:column headerText="Name">
-                            <h:outputText value="#{lico.f}"/>
-                        </p:column>
-                        <p:column headerText="Year">
-                            <h:outputText value="#{lico.i}"/>
-                        </p:column>
-                        <p:column headerText="Author">
-                            <h:outputText value="#{lico.o}"/>
-                        </p:column>
-                        <p:column style="width:100px;text-align: center">
-                            <p:commandButton icon="fa fa-pencil" update=":form:licoEdit" oncomplete="PF('editDialog').show()">
-                                <f:setPropertyActionListener value="#{lico}" target="#{licoController.selectedLico}"/>
-                            </p:commandButton>
-                            <p:commandButton action="#{licoController.deleteLico(lico)}" icon="fa fa-trash"></p:commandButton>
-                        </p:column>
-                    </p:dataTable>
-                    <p:dialog header="Edit Lico" widgetVar="editDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-                        <p:outputPanel id="licoEdit" style="text-align:center;">
-                            <p:panelGrid  columns="2" rendered="#{not empty licoController.selectedLico}" columnClasses="label,value">
-                                <h:outputText value="Name: " />
-                                <p:inputText value="#{licoController.selectedLico.f}" />
-                                <h:outputText value="Category: " />
-                                <p:inputText value="#{licoController.selectedLico.i}" />
-                                <h:outputText value="Author: " />
-                                <p:inputText value="#{licoController.selectedLico.o}"/>
-                            </p:panelGrid>
-                            <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{licoController.updateLico(licoController.selectedLico)}"/>
-                        </p:outputPanel>
-                    </p:dialog>
-                </h:form>
-                <p>
-                    В этот главный раздел страницы можно поместить основной
-                    текст, изображения, формы и т. д. В данном примере
-                    используется типичный текст-заполнитель, который так
-                    любят веб-дизайнеры.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Nunc venenatis, diam nec tempor dapibus,
-                    lacus erat vehicula mauris, id lacinia nisi arcu vitae purus.
-                    Nam vestibulum nisi non lacus luctus vel ornare nibh pharetra.
-                    Aenean non lorem lectus, eu tempus lectus. Cras mattis nibh a
-                    mi pharetra ultricies. In consectetur, tellus sit amet pretium
-                    facilisis, enim ipsum consectetur magna, a mattis ligula massa
-                    vel mi. Maecenas id arcu a erat pellentesque vestibulum at
-                    vitae nulla. Nullam eleifend sodales tincidunt. Donec viverra
-                    libero non erat porta sit amet convallis enim commodo. Cras
-                    eu libero elit, ac aliquam ligula. Quisque a elit nec ligula
-                    dapibus porta sit amet a nulla. Nulla vitae molestie ligula.
-                    Aliquam interdum, velit at tincidunt ultrices, sapien mauris
-                    sodales mi, vel rutrum turpis neque id ligula. Donec dictum
-                    condimentum arcuut convallis. Maecenas blandit, ante eget tempor
-                    sollicitudin, ligula eros venenatis justo, sed ullamcorper dui
-                    leo id nunc. Suspendisse potenti. Ut vel mauris sem. Duis
-                    lacinia eros laoreet diam cursus nec hendrerit tellus pellentesque.
-                </p>
+                <h2 align="center"><ul/><h:form><h:commandLink action="Lico"><h:outputText value="Добавление/Изменение таблицы юридическое лицо."/></h:commandLink></h:form></h2>
+                <h2 align="center"><ul/><h:form><h:commandLink action="SborochnieKomplectuyshie"><h:outputText value="Добавление/Изменение таблицы компьютеры."/></h:commandLink></h:form></h2>
+                <h2 align="center"><ul/><h:form><h:commandLink action="spisok_komplektyushix"><h:outputText value="Добавление/Изменение таблицы комплектующих."/></h:commandLink></h:form></h2>
+                <h2 align="center"><ul/><h:form><h:commandLink action="Lico"><h:outputText value="Добавление/Изменение таблицы ."/></h:commandLink></h:form></h2>
+                <h2 align="center"><ul/><h:form><h:commandLink action="Lico"><h:outputText value="Добавление/Изменение таблицы ."/></h:commandLink></h:form></h2>
+                <h2 align="center"><ul/><h:form><h:commandLink action="Lico"><h:outputText value="Добавление/Изменение таблицы ."/></h:commandLink></h:form></h2>
             </ui:define>
 
         </ui:composition>

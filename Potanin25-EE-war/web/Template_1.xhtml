@@ -17,12 +17,36 @@
         <div id="top" class="top">
             <ui:insert name="top">
                 <h2 align="center">Welcome to our Mice site</h2>
+                <ul align="right">
+                    <h:form>
+                        <h:commandLink value="Sign in " action="Registr" />
+                        <h:commandLink value="Sign up " action="Registr" />
+                    </h:form>
+                </ul>
             </ui:insert>
         </div>
         <div>
             <div id="left">
                 <ui:insert name="left">Mice Links
                     <h3>Ссылки</h3>
+                    <ul>
+                        <li>
+                            <h:outputLink value="http://www.packtpub.com">
+                                <h:outputText value="Packt Publishing"/>
+                            </h:outputLink>
+                        </li>
+                        <li>
+                            <h:outputLink value="http://www.ensode.net">
+                                <h:outputText value="Ensode.net"/>
+                            </h:outputLink>
+                        </li>
+                        <li>
+                            <h:outputLink value="http://www.ensode.com">
+                                <h:outputText value="Ensode Technology, LLC"/>
+                            </h:outputLink>
+                        </li>
+                        <!-- другие ссылки опущены для экономии места -->
+                    </ul>
                     <h3>Часто задаваемые вопросы:</h3>
                     <ul>
                         <li>

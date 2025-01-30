@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./Template.xhtml">
+
+            <ui:define name="content">
+                <h1>CRUD</h1>
+                <h:form>
+                    <h:panelGrid columns="12" cellpadding="5">
+                        <h:outputText value="Name " />
+                        <p:inputText value="#{licoController.f}"/>
+                        <h:outputText value="Author " />
+                        <p:inputText value="#{licoController.i}" />
+                        <h:outputText value="Category " />
+                        <p:inputText value="#{licoController.o}"/>
+                        <p:commandButton value="Add" icon="fa fa-fw fa-plus" action="#{licoController.createLico()}"/>
+                    </h:panelGrid>
+                </h:form>
+                <h:form  id="form">
+                    <p:dataTable value="#{licoController.getAllLicos()}" var="lico" style="margin: 2em;" rowKey="#{lico.id}">
+                        <p:column headerText="Name">
+                            <h:outputText value="#{licoController.f}"/>
+                        </p:column>
+                        <p:column headerText="Year">
+                            <h:outputText value="#{licoController.i}"/>
+                        </p:column>
+                        <p:column headerText="Author">
+                            <h:outputText value="#{licoController.o}"/>
+                        </p:column>
+                        <p:column style="width:100px;text-align: center">
+                            <p:commandButton icon="fa fa-pencil" update=":form:licoEdit" oncomplete="PF('editDialog').show()">
+                                <f:setPropertyActionListener value="#{lico}" target="#{licoController.selectedLico}"/>
+                            </p:commandButton>
+                            <p:commandButton action="#{licoController.deleteLico(lico)}" icon="fa fa-trash"></p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                    <p:dialog header="Edit Lico" widgetVar="editDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                        <p:outputPanel id="licoEdit" style="text-align:center;">
+                            <p:panelGrid  columns="2" rendered="#{not empty licoController.selectedLico}" columnClasses="label,value">
+                                <h:outputText value="Name: " />
+                                <p:inputText value="#{licoController.selectedLico.f}" />
+                                <h:outputText value="Category: " />
+                                <p:inputText value="#{licoController.selectedLico.i}" />
+                                <h:outputText value="Author: " />
+                                <p:inputText value="#{licoController.selectedLico.o}"/>
+                            </p:panelGrid>
+                            <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{licoController.updateLico(licoController.selectedLico)}"/>
+                        </p:outputPanel>
+                    </p:dialog>
+                </h:form>
+                <p>
+                    В этот главный раздел страницы можно поместить основной
+                    текст, изображения, формы и т. д. В данном примере
+                    используется типичный текст-заполнитель, который так
+                    любят веб-дизайнеры.
+                </p>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

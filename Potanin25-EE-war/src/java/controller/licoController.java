@@ -95,7 +95,7 @@ public class licoController implements Serializable {
         this.lico.setO(this.O);
         this.licosFacade.create(this.lico);
         this.emptyVariables();
-        return "start.xhtml?faces-redirect=true";
+        return "Lico.xhtml?faces-redirect=true";
     }
 
     public List<Lico> getAllLicos() {
@@ -104,11 +104,11 @@ public class licoController implements Serializable {
 
     public String updateLico(Lico lico) {
         this.licosFacade.edit(lico);
-        return "start.xhtml?faces-redirect=true";
+        return "Lico.xhtml?faces-redirect=true";
     }
 
     public String deleteLico(Lico lico) {
         this.licosFacade.remove(lico);
-        return "start.xhtml?faces-redirect=true";
+        return "Lico.xhtml?faces-redirect=true";
     }
 }

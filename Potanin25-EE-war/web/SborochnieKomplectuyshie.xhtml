@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./Template.xhtml">
+
+            <ui:define name="content">
+                <h1>CRUD таблица сборки пк(или как-то так).</h1>
+                <h:form>
+                    <h:panelGrid columns="12" cellpadding="5">
+                        <h:outputText value="Номер техники " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.nomber_Techniki}"/>
+                        <h:outputText value="Материнская плата " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.motherboard}"/>
+                        <h:outputText value="Видеокарта " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.GPU}"/>
+                        <h:outputText value="HDD/SSD/CD " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.HDDSSDCD}"/>
+                        <h:outputText value="Процессор " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.procesor}"/>
+                        <h:outputText value="Корпус " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.korpus}"/>
+                        <h:outputText value="Оперативная память " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.OZY}"/>
+                        <h:outputText value="Мощность " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.battery}"/>
+                        <h:outputText value="Куллеры " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.cooling}"/>
+                        <p:commandButton value="Add" icon="fa fa-fw fa-plus" action="#{sborochnie_komplectuyshieController.createSborochnieKomplectuyshie()}"/>
+                    </h:panelGrid>
+                </h:form>
+                <h:form  id="form">
+                    <p:dataTable value="#{sborochnie_komplectuyshieController.getAllSborochnieKomplectuyshies()}" var="sborochnie_komplectuyshieController" style="margin: 2em;" rowKey="#{sborochnie_komplectuyshieController.id}">
+                        <p:column headerText="Номер техники">
+                            <h:outputText value="#{sborochnie_komplectuyshieController.nomber_Techniki}"/>
+                        </p:column>
+                        <p:column headerText="Name">
+                            <h:outputText value="#{sborochnie_komplectuyshieController.motherboard}"/>
+                        </p:column>
+                        <p:column headerText="Name">
+                            <h:outputText value="#{sborochnie_komplectuyshieController.GPU}"/>
+                        </p:column>
+                        <p:column headerText="Name">
+                            <h:outputText value="#{sborochnie_komplectuyshieController.HDDSSDCD}"/>
+                        </p:column>
+                        <p:column headerText="Name">
+                            <h:outputText value="#{sborochnie_komplectuyshieController.procesor}"/>
+                        </p:column>
+                        <p:column headerText="Name">
+                            <h:outputText value="#{sborochnie_komplectuyshieController.korpus}"/>
+                        </p:column>
+                        <p:column headerText="Name">
+                            <h:outputText value="#{sborochnie_komplectuyshieController.OZY}"/>
+                        </p:column>
+                        <p:column headerText="Name">
+                            <h:outputText value="#{sborochnie_komplectuyshieController.battery}"/>
+                        </p:column>
+                        <p:column headerText="Name">
+                            <h:outputText value="#{sborochnie_komplectuyshieController.cooling}"/>
+                        </p:column>
+                        <p:column style="width:100px;text-align: center">
+                            <p:commandButton icon="fa fa-pencil" update=":form:sborochnie_komplectuyshieEdit" oncomplete="PF('editDialog').show()">
+                                <f:setPropertyActionListener value="#{sborochnie_komplectuyshie}" target="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie}"/>
+                            </p:commandButton>
+                            <p:commandButton action="#{sborochnie_komplectuyshieController.deleteSborochnieKomplectuyshie(sborochnie_komplectuyshie)}" icon="fa fa-trash"></p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                    <p:dialog header="Edit sborochnie_komplectuyshie" widgetVar="editDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                        <p:outputPanel id="sborochnie_komplectuyshieEdit" style="text-align:center;">
+                            <p:panelGrid  columns="2" rendered="#{not empty sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie}" columnClasses="label,value">
+                                <h:outputText value="Номер техники " />
+                                <p:inputText value="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie.nomberTechniki}"/>
+                        <h:outputText value="Материнская плата " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie.motherboard}"/>
+                        <h:outputText value="Видеокарта " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie.gpu}"/>
+                        <h:outputText value="HDD/SSD/CD " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie.hddssdcd}"/>
+                        <h:outputText value="Процессор " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie.procesor}"/>
+                        <h:outputText value="Корпус " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie.korpus}"/>
+                        <h:outputText value="Оперативная память " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie.ozy}"/>
+                        <h:outputText value="Мощность " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie.battery}"/>
+                        <h:outputText value="Куллеры " />
+                        <p:inputText value="#{sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie.cooling}"/>
+                            </p:panelGrid>
+                            <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{sborochnie_komplectuyshieController.updateSborochnieKomplectuyshie(sborochnie_komplectuyshieController.selectedSborochnieKomplectuyshie)}"/>
+                        </p:outputPanel>
+                    </p:dialog>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
