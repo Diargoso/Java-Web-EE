@@ -26,13 +26,13 @@
                 <h:form  id="form">
                     <p:dataTable value="#{licoController.getAllLicos()}" var="lico" style="margin: 2em;" rowKey="#{lico.id}">
                         <p:column headerText="Name">
-                            <h:outputText value="#{licoController.f}"/>
+                            <h:outputText value="#{lico.f}"/>
                         </p:column>
                         <p:column headerText="Year">
-                            <h:outputText value="#{licoController.i}"/>
+                            <h:outputText value="#{lico.i}"/>
                         </p:column>
                         <p:column headerText="Author">
-                            <h:outputText value="#{licoController.o}"/>
+                            <h:outputText value="#{lico.o}"/>
                         </p:column>
                         <p:column style="width:100px;text-align: center">
                             <p:commandButton icon="fa fa-pencil" update=":form:licoEdit" oncomplete="PF('editDialog').show()">

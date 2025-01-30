@@ -36,33 +36,33 @@
                     </h:panelGrid>
                 </h:form>
                 <h:form  id="form">
-                    <p:dataTable value="#{sborochnie_komplectuyshieController.getAllSborochnieKomplectuyshies()}" var="sborochnie_komplectuyshieController" style="margin: 2em;" rowKey="#{sborochnie_komplectuyshieController.id}">
+                    <p:dataTable value="#{sborochnie_komplectuyshieController.getAllSborochnieKomplectuyshies()}" var="sborochnie_komplectuyshie" style="margin: 2em;" rowKey="#{sborochnie_komplectuyshie.id}">
                         <p:column headerText="Номер техники">
-                            <h:outputText value="#{sborochnie_komplectuyshieController.nomber_Techniki}"/>
+                            <h:outputText value="#{sborochnie_komplectuyshie.nomberTechniki}"/>
                         </p:column>
                         <p:column headerText="Name">
-                            <h:outputText value="#{sborochnie_komplectuyshieController.motherboard}"/>
+                            <h:outputText value="#{sborochnie_komplectuyshie.motherboard}"/>
                         </p:column>
                         <p:column headerText="Name">
-                            <h:outputText value="#{sborochnie_komplectuyshieController.GPU}"/>
+                            <h:outputText value="#{sborochnie_komplectuyshie.gpu}"/>
                         </p:column>
                         <p:column headerText="Name">
-                            <h:outputText value="#{sborochnie_komplectuyshieController.HDDSSDCD}"/>
+                            <h:outputText value="#{sborochnie_komplectuyshie.hddssdcd}"/>
                         </p:column>
                         <p:column headerText="Name">
-                            <h:outputText value="#{sborochnie_komplectuyshieController.procesor}"/>
+                            <h:outputText value="#{sborochnie_komplectuyshie.procesor}"/>
                         </p:column>
                         <p:column headerText="Name">
-                            <h:outputText value="#{sborochnie_komplectuyshieController.korpus}"/>
+                            <h:outputText value="#{sborochnie_komplectuyshie.korpus}"/>
                         </p:column>
                         <p:column headerText="Name">
-                            <h:outputText value="#{sborochnie_komplectuyshieController.OZY}"/>
+                            <h:outputText value="#{sborochnie_komplectuyshie.ozy}"/>
                         </p:column>
                         <p:column headerText="Name">
-                            <h:outputText value="#{sborochnie_komplectuyshieController.battery}"/>
+                            <h:outputText value="#{sborochnie_komplectuyshie.battery}"/>
                         </p:column>
                         <p:column headerText="Name">
-                            <h:outputText value="#{sborochnie_komplectuyshieController.cooling}"/>
+                            <h:outputText value="#{sborochnie_komplectuyshie.cooling}"/>
                         </p:column>
                         <p:column style="width:100px;text-align: center">
                             <p:commandButton icon="fa fa-pencil" update=":form:sborochnie_komplectuyshieEdit" oncomplete="PF('editDialog').show()">

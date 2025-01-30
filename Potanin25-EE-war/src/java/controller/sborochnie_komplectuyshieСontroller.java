@@ -29,6 +29,7 @@ public class sborochnie_komplectuyshieСontroller implements Serializable {
     @EJB
     private SborochnieKomplectuyshieFacadeLocal sborochnieKomplectuyshiesFacede;
     private SborochnieKomplectuyshie sborochnieKomplectuyshie = new SborochnieKomplectuyshie();
+    
     private String Nomber_Techniki, Motherboard, GPU, HDDSSDCD, Procesor, Korpus, OZY, Battery, Cooling;
     private int id;
 
