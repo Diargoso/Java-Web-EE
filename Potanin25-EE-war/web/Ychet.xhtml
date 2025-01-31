@@ -18,7 +18,7 @@
                         <p:inputText value="#{Ychet.nomber_Techniki}"/>
                         <h:outputText value="Кабинет " />
                         <p:inputText value="#{Ychet.cabNum}" />
-                        <h:outputText value=" " />
+                        <h:outputText value="Амортизация " />
                         <p:inputText value="#{Ychet.depreciation}"/>
                         <p:commandButton value="Add" icon="fa fa-fw fa-plus" action="#{Ychet.createYchet()}"/>
                     </h:panelGrid>
@@ -31,7 +31,7 @@
                         <p:column headerText="Кабинет">
                             <h:outputText value="#{ychet.cabNum}"/>
                         </p:column>
-                        <p:column headerText="">
+                        <p:column headerText="Амортизация">
                             <h:outputText value="#{ychet.depreciation}"/>
                         </p:column>
                         <p:column style="width:100px;text-align: center">
@@ -48,7 +48,7 @@
                                 <p:inputText value="#{Ychet.selectedYchet.nomberTechniki}" />
                                 <h:outputText value="Кабинет: " />
                                 <p:inputText value="#{Ychet.selectedYchet.cabNum}" />
-                                <h:outputText value=": " />
+                                <h:outputText value="Амортизация: " />
                                 <p:inputText value="#{Ychet.selectedYchet.depreciation}"/>
                             </p:panelGrid>
                             <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{Ychet.updateYchet(Ychet.selectedYchet)}"/>
