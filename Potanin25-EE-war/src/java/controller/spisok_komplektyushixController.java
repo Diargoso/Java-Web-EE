@@ -17,7 +17,7 @@ import sessionbean.SpisokKomplektyushixFacadeLocal;
  *
  * @author Student
  */
-@Named(value = "spisok_komplektyushixController")
+@Named(value = "spisok_komplektyushix")
 @SessionScoped
 public class spisok_komplektyushixController implements Serializable {
 
@@ -77,7 +77,7 @@ public class spisok_komplektyushixController implements Serializable {
         return "spisok_komplektyushix.xhtml?faces-redirect=true";
     }
 
-    public List<SpisokKomplektyushix> getAllspisokKomplektyushixFacade() {
+    public List<SpisokKomplektyushix> getAllspisok_komplektyushixKomplektyushixFacade() {
         return this.spisokKomplektyushixFacade.findAll();
     }
 

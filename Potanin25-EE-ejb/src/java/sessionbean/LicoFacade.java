@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Student
+ * @author STUDENT 1
  */
 @Stateless
 public class LicoFacade extends AbstractFacade<Lico> implements LicoFacadeLocal {

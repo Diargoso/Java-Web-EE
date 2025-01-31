@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./Template.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <h:panelGrid columns="12" cellpadding="5">
+                        <h:outputText value="Комплектующие " />
+                        <p:inputText value="#{gadjet.type}"/>
+                        <p:commandButton value="Add" icon="fa fa-fw fa-plus" action="#{gadjet.createTypeGadjet()}"/>
+                    </h:panelGrid>
+                </h:form>
+                <h:form  id="form">
+                    <p:dataTable value="#{gadjet.allTypeGadjets}" var="TypeGadjet" style="margin: 2em;" rowKey="#{TypeGadjet.id}">
+                        <p:column headerText="Комплектующие">
+                            <h:outputText value="#{TypeGadjet.type}"/>
+                        </p:column>
+                        <p:column style="width:100px;text-align: center">
+                            <p:commandButton icon="fa fa-pencil" update=":form:gadjetEdit" oncomplete="PF('editDialog').show()">
+                                <f:setPropertyActionListener value="#{TypeGadjet}" target="#{gadjet.selectedTypeGadjet}"/>
+                            </p:commandButton>
+                            <p:commandButton action="#{gadjet.deleteTypeGadjet(TypeGadjet)}" icon="fa fa-trash"></p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                     <p:dialog header="Edit spisok" widgetVar="editDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                        <p:outputPanel id="gadjetEdit" style="text-align:center;">
+                            <p:panelGrid  columns="2" rendered="#{not empty gadjet.selectedTypeGadjet}">
+                                <h:outputText value="Комплектующие: " />
+                                <p:inputText value="#{gadjet.selectedTypeGadjet.type}" />
+                            </p:panelGrid>
+                            <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{gadjet.updateTypeGadjet(gadjet.selectedTypeGadjet)}"/>
+                        </p:outputPanel>
+                    </p:dialog>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

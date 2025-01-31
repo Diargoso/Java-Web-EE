@@ -15,29 +15,29 @@
                 <h:form>
                     <h:panelGrid columns="12" cellpadding="5">
                         <h:outputText value="Комплектующие " />
-                        <p:inputText value="#{spisok_komplektyushixController.komplektyushix}"/>
-                        <p:commandButton value="Add" icon="fa fa-fw fa-plus" action="#{spisok_komplektyushixController.createSpisokKomplektyushix()}"/>
+                        <p:inputText value="#{spisok_komplektyushix.komplektyushix}"/>
+                        <p:commandButton value="Add" icon="fa fa-fw fa-plus" action="#{spisok_komplektyushix.createSpisokKomplektyushix()}"/>
                     </h:panelGrid>
                 </h:form>
                 <h:form  id="form">
-                    <p:dataTable value="#{spisok_komplektyushixController.getAllspisokKomplektyushixFacade()}" var="SpisokKomplektyushix" style="margin: 2em;" rowKey="#{SpisokKomplektyushix.id}">
+                    <p:dataTable value="#{spisok_komplektyushix.allspisok_komplektyushixKomplektyushixFacade}" var="SpisokKomplektyushix" style="margin: 2em;" rowKey="#{SpisokKomplektyushix.id}">
                         <p:column headerText="Комплектующие">
                             <h:outputText value="#{SpisokKomplektyushix.komplektuyshie}"/>
                         </p:column>
                         <p:column style="width:100px;text-align: center">
                             <p:commandButton icon="fa fa-pencil" update=":form:spisok_komplektyushixEdit" oncomplete="PF('editDialog').show()">
-                                <f:setPropertyActionListener value="#{spisok_komplektyushix}" target="#{spisok_komplektyushixController.selectedSpisokKomplektyushix}"/>
+                                <f:setPropertyActionListener value="#{SpisokKomplektyushix}" target="#{spisok_komplektyushix.selectedSpisokKomplektyushix}"/>
                             </p:commandButton>
-                            <p:commandButton action="#{spisok_komplektyushixController.deleteSpisokKomplektyushix(spisok_komplektyushix)}" icon="fa fa-trash"></p:commandButton>
+                            <p:commandButton action="#{spisok_komplektyushix.deleteSpisokKomplektyushix(SpisokKomplektyushix)}" icon="fa fa-trash"></p:commandButton>
                         </p:column>
                     </p:dataTable>
-                    <p:dialog header="Edit spisok_komplektyushixController" widgetVar="editDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                     <p:dialog header="Edit spisok" widgetVar="editDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
                         <p:outputPanel id="spisok_komplektyushixEdit" style="text-align:center;">
-                            <p:panelGrid  columns="2" rendered="#{not empty spisok_komplektyushixController.selectedSpisokKomplektyushix}" columnClasses="label,value">
+                            <p:panelGrid  columns="2" rendered="#{not empty spisok_komplektyushix.selectedSpisokKomplektyushix}">
                                 <h:outputText value="Комплектующие: " />
-                                <p:inputText value="#{spisok_komplektyushixController.selectedSpisokKomplektyushix.komplektuyshie}" />
+                                <p:inputText value="#{spisok_komplektyushix.selectedSpisokKomplektyushix.komplektuyshie}" />
                             </p:panelGrid>
-                            <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{spisok_komplektyushixController.updateSpisokKomplektyushix(spisok_komplektyushixController.selectedSpisokKomplektyushix)}"/>
+                            <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{spisok_komplektyushix.updateSpisokKomplektyushix(spisok_komplektyushix.selectedSpisokKomplektyushix)}"/>
                         </p:outputPanel>
                     </p:dialog>
                 </h:form>

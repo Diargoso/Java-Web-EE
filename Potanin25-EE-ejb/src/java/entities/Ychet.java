@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Student
+ * @author STUDENT 1
  */
 @Entity
 @Table(name = "ychet")

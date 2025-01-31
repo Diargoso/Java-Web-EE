@@ -11,7 +11,7 @@ import javax.ejb.Local;
 
 /**
  *
- * @author Student
+ * @author STUDENT 1
  */
 @Local
 public interface TypeGadjetFacadeLocal {

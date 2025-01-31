@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -21,15 +22,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Student
+ * @author STUDENT 1
  */
 @Entity
 @Table(name = "spisok_komplektyushix")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "SpisokKomplektyushix.findAll", query = "SELECT s FROM SpisokKomplektyushix s")
-    , @NamedQuery(name = "SpisokKomplektyushix.findById", query = "SELECT s FROM SpisokKomplektyushix s WHERE s.id = :id")
-    , @NamedQuery(name = "SpisokKomplektyushix.findByKomplektuyshie", query = "SELECT s FROM SpisokKomplektyushix s WHERE s.komplektuyshie = :komplektuyshie")})
+    , @NamedQuery(name = "SpisokKomplektyushix.findById", query = "SELECT s FROM SpisokKomplektyushix s WHERE s.id = :id")})
 public class SpisokKomplektyushix implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,7 +40,8 @@ public class SpisokKomplektyushix implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 30)
+    @Lob
+    @Size(min = 1, max = 65535)
     @Column(name = "Komplektuyshie")
     private String komplektuyshie;
 
