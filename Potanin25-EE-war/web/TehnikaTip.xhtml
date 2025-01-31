@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./Template.xhtml">
+
+            <ui:define name="content">
+                <h1>CRUD</h1>
+                <h:form>
+                    <h:panelGrid columns="12" cellpadding="5">
+                        <h:outputText value="Название " />
+                        <p:inputText value="#{tehnika.name}"/>
+                        <h:outputText value="Тип " />
+                        <p:inputText value="#{tehnika.type}" />
+                        <h:outputText value="Date " />
+                        <p:inputText value="#{tehnika.date}"/>
+                        <p:commandButton value="Add" icon="fa fa-fw fa-plus" action="#{tehnika.createTehnikaTip()}"/>
+                    </h:panelGrid>
+                </h:form>
+                <h:form  id="form">
+                    <p:dataTable value="#{tehnika.allTehnikaTips}" var="tehnika_tip" style="margin: 2em;" rowKey="#{tehnika_tip.id}">
+                        <p:column headerText="Название">
+                            <h:outputText value="#{tehnika_tip.name}"/>
+                        </p:column>
+                        <p:column headerText="Тип">
+                            <h:outputText value="#{tehnika_tip.type}"/>
+                        </p:column>
+                        <p:column headerText="Date">
+                            <h:outputText value="#{tehnika_tip.date}"/>
+                        </p:column>
+                        <p:column style="width:100px;text-align: center">
+                            <p:commandButton icon="fa fa-pencil" update=":form:TehnikaTipEdit" oncomplete="PF('editDialog').show()">
+                                <f:setPropertyActionListener value="#{tehnika_tip}" target="#{tehnika.selectedTehnikaTip}"/>
+                            </p:commandButton>
+                            <p:commandButton action="#{tehnika.deleteTehnikaTip(tehnika_tip)}" icon="fa fa-trash"></p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                    <p:dialog header="Edit TehnikaTip" widgetVar="editDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                        <p:outputPanel id="TehnikaTipEdit" style="text-align:center;">
+                            <p:panelGrid  columns="2" rendered="#{not empty tehnika.selectedTehnikaTip}" columnClasses="label,value">
+                                <h:outputText value="Название: " />
+                                <p:inputText value="#{tehnika.selectedTehnikaTip.name}" />
+                                <h:outputText value="Тип: " />
+                                <p:inputText value="#{tehnika.selectedTehnikaTip.type}" />
+                                <h:outputText value="Date: " />
+                                <p:inputText value="#{tehnika.selectedTehnikaTip.date}"/>
+                            </p:panelGrid>
+                            <p:commandButton value="Update" icon="fa fa-fw fa-pencil" action="#{tehnika.updateTehnikaTip(tehnika.selectedTehnikaTip)}"/>
+                        </p:outputPanel>
+                    </p:dialog>
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

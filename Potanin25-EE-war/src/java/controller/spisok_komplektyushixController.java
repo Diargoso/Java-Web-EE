@@ -74,7 +74,7 @@ public class spisok_komplektyushixController implements Serializable {
         this.spisok_komplektyushix.setKomplektuyshie(this.komplektyushix);
         this.spisokKomplektyushixFacade.create(this.spisok_komplektyushix);
         this.emptyVariables();
-        return "SpisokKomplektyushix.xhtml?faces-redirect=true";
+        return "spisok_komplektyushix.xhtml?faces-redirect=true";
     }
 
     public List<SpisokKomplektyushix> getAllspisokKomplektyushixFacade() {
@@ -83,12 +83,12 @@ public class spisok_komplektyushixController implements Serializable {
 
     public String updateSpisokKomplektyushix(SpisokKomplektyushix spisok_komplektyushix) {
         this.spisokKomplektyushixFacade.edit(spisok_komplektyushix);
-        return "SpisokKomplektyushix.xhtml?faces-redirect=true";
+        return "spisok_komplektyushix.xhtml?faces-redirect=true";
     }
 
     public String deleteSpisokKomplektyushix(SpisokKomplektyushix spisok_komplektyushix) {
         this.spisokKomplektyushixFacade.remove(spisok_komplektyushix);
-        return "SpisokKomplektyushix.xhtml?faces-redirect=true";
+        return "spisok_komplektyushix.xhtml?faces-redirect=true";
     }
 
 }

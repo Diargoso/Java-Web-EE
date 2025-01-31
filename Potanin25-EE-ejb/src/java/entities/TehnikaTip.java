@@ -25,15 +25,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Student
+ * @author STUDENT 1
  */
 @Entity
-@Table(name = "tehnika_(tip)")
+@Table(name = "tehnika_tip")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "TehnikaTip.findAll", query = "SELECT t FROM TehnikaTip t")
     , @NamedQuery(name = "TehnikaTip.findById", query = "SELECT t FROM TehnikaTip t WHERE t.id = :id")
-    , @NamedQuery(name = "TehnikaTip.findByName", query = "SELECT t FROM TehnikaTip t WHERE t.name = :name")
     , @NamedQuery(name = "TehnikaTip.findByDate", query = "SELECT t FROM TehnikaTip t WHERE t.date = :date")})
 public class TehnikaTip implements Serializable {
 
@@ -45,7 +44,8 @@ public class TehnikaTip implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 20)
+    @Lob
+    @Size(min = 1, max = 65535)
     @Column(name = "name")
     private String name;
     @Basic(optional = false)
@@ -54,8 +54,6 @@ public class TehnikaTip implements Serializable {
     @Size(min = 1, max = 65535)
     @Column(name = "type")
     private String type;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "Date")
     @Temporal(TemporalType.DATE)
     private Date date;
@@ -67,11 +65,10 @@ public class TehnikaTip implements Serializable {
         this.id = id;
     }
 
-    public TehnikaTip(Integer id, String name, String type, Date date) {
+    public TehnikaTip(Integer id, String name, String type) {
         this.id = id;
         this.name = name;
         this.type = type;
-        this.date = date;
     }
 
     public Integer getId() {

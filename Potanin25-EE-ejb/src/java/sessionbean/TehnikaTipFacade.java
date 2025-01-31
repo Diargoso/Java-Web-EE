@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Student
+ * @author STUDENT 1
  */
 @Stateless
 public class TehnikaTipFacade extends AbstractFacade<TehnikaTip> implements TehnikaTipFacadeLocal {
