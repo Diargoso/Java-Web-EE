@@ -1,10 +1,152 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 15.01.2025, 10:35:48
-    Author     : директор
-*/
+h3 {
+    font-style: italic;
+    text-align: right;
+}
+a {
+    text-decoration: none;
+    color: grey;
+}
+h1, h2, h3, h4, h5, h6, p, span, a, label {
+    font-family: sans-serif;
+}
 
+/* V2 */
+
+* {
+    box-sizing: border-box;
+}
+div {
+    margin: auto;
+}
+.global {
+    border: 1px solid grey;
+    width: 900px;
+}
+.container {
+    border: 1px solid grey;
+    padding: 10px;
+}
+footer {
+    border: 1px solid grey;
+    flex-shrink: 0;
+}
+.footer h3 {
+    margin-right: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.link{
+    width: 100%;
+    border: 2px solid turquoise;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.link:hover {
+    background-color: #d1efe1;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.header{
+    background: #469597;
+}
+content{
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background-color: #5BA199;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+.inline{
+    display: inline;
+}
+
+.btn {
+    background-color: #eceaea;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.25s;
+}
+
+.btn:hover {
+    background-color: #dbd9d9
+}
+
+.processes {
+    padding: 20px;
+}
+
+.processes div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.process {
+    background-color: #eceaea;
+    border: 1px solid #eceaea;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    display:block;
+    margin-top: auto;
+    width: 100%;
+}
+
+.main{
+    background: white;
+}
+.selction a:hover{
+    color: blue;
+    text-decoration: none;
+}
+.selction a {
+    color: white;
+}
+
+div.news-list-wrap.detail {
+    position: relative;
+    z-index: 99;
+}

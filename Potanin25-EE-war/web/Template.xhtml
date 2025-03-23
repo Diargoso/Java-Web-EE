@@ -6,44 +6,30 @@
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <h:outputStylesheet name="/css/default.css"/>
-        <h:outputStylesheet name="/css/cssLayout.css"/>
-        <link href="resources/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/style.css" rel="stylesheet" type="text/css"/>
         <title>Facelets Template</title>
     </h:head>
 
     <h:body>
-
-        <div id="top" class="top">
-            <ui:insert name="top">
-                <h2 align="center">Welcome to our Mice site</h2>
-            </ui:insert>
-        </div>
-        <div>
-            <div id="left">
-                <ui:insert name="left">Mice Links
-                    <h3>Ссылки</h3>
-                    <h3>Часто задаваемые вопросы:</h3>
-                    <ul>
-                        <li>
-                            <h:form>
-                                <h:commandLink action="Question">
-                                    <h:outputText value="Как авторизоватся?"/>
-                                </h:commandLink>
-                            </h:form>
-                        </li>
-                    </ul>
-                </ui:insert>
+        <header class="header">
+            <div align="left">
+                <h0/>Logistic inc.
             </div>
-            <div id="content" class="left_content">
-                <ui:insert name="content"></ui:insert>
-            </div>
-            <div id="bottom" align="center">
-                <h1><ui:insert name="bottom">Credits</ui:insert></h1>
-            </div>
-        </div>
+            <nav>
+                <ul class="selction">
+                    <li><a href="/Potanin25-EE-war">Главная</a></li>
+                   <!--<li><a href="">Процессы<h0 style="display: inline; color: red">(Warning!)</h0></a></li>-->
+                    <li><a href="faces/details.xhtml">Комплектующие</a></li>
+                    <li><a href="faces/Contacts.xhtml">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
 
+        <ui:insert name="content">Content</ui:insert>
 
+        <footer>
+            <p>&copy; 2023 Учебное заведение. Все права защищены.</p>
+        </footer>
     </h:body>
 
 </html>

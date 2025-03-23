@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Главная страница</title>
+    </h:head>
+
+    <h:body>
+        <ui:composition template="./Template.xhtml">
+
+            <ui:define name="content">
+                <section class="hero">
+                    <h2>Моделирование бизнес-процессов установки компьютеров</h2>
+                    <p>Оптимизация процессов для эффективного использования ресурсов учебного заведения.</p>
+                    <a href="https://bootcamp.skillbox.ru/" class="btn">Узнать больше</a>
+                </section>
+                <section class="processes">
+                    <h2>Основные бизнес-процессы</h2>
+                    <div class="process">
+                        <p>Определение необходимых комплектующих и оборудования для учебного процесса.</p>
+                        <h3>Анализ потребностей</h3>
+                    </div>
+                    <div class="process">
+                        <p>Процесс выбора и закупки компьютеров и комплектующих.</p>
+                        <h3>Закупка оборудования</h3>
+                    </div>
+                    <div class="process">
+                        <p>Установка программного обеспечения и настройка оборудования.</p>
+                        <h3>Установка и настройка</h3>
+                    </div>
+                    <div class="process">
+                        <p>Обучение студентов и преподавателей работе с новым оборудованием.</p>
+                        <h3>Обучение пользователей</h3>
+                    </div>
+                </section>
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+
+</html>
